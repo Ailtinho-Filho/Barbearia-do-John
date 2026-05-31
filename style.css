@@ -1,9 +1,273 @@
-body{
-    text-align: justify;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-text{
-    text-align:justify;
-    color: black;
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --accent: #c9a84c;
+  --text: #f0f0f0;
+  --muted: #888;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--surface);
+  border-bottom: 2px solid var(--accent);
+  z-index: 100;
+  padding: 1rem 2rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-container h1 {
+  color: var(--accent);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-container a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-container a:hover {
+  color: var(--accent);
+}
+
+#hero {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 2rem;
+  margin-top: 60px;
+}
+
+.hero-container h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero-container p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-container a {
+  background: var(--accent);
+  color: #0f0f0f;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+
+.hero-container a:hover {
+  opacity: 0.85;
+}
+
+#servicos {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#servicos h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.servico-card {
+  background: var(--surface);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.servico-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.servico-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.servico-card p {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#agendamentos {
+  padding: 5rem 2rem;
+  background: var(--surface);
+}
+
+.agendamentos-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#agendamentos h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#agendamentos h3 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin: 2rem 0 1rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group select {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  flex: 1;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+}
+
+.form-group button {
+  background: var(--accent);
+  color: #0f0f0f;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.form-group button:hover {
+  opacity: 0.85;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background: #0f0f0f;
+  border-bottom: 2px solid var(--accent);
+}
+
+th, td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+td { border-bottom: 1px solid #222; }
+
+tbody tr:hover { background: #1f1f1f; }
+
+td button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-right: 0.4rem;
+}
+
+td button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+td button:last-child {
+  background: #dc2626;
+  color: white;
+}
+
+#footer {
+  background: #0a0a0a;
+  border-top: 2px solid var(--accent);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-container p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-container p:first-child {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+body > * {
+  scroll-margin-top: 70px;
 }
